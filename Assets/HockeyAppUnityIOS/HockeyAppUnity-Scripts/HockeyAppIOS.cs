@@ -143,8 +143,11 @@ public class HockeyAppIOS : MonoBehaviour
 		string versionName = HockeyApp_GetVersionName();
 		list.Add("Version Name: " + versionName);
 
-		string osVersion = "OS: " + SystemInfo.operatingSystem.Replace("iPhone OS ", "");
-		list.Add (osVersion);
+        if (SystemInfo.operatingSystem != null)
+        {
+            string osVersion = "OS: " + SystemInfo.operatingSystem.Replace("iPhone OS ", "");
+	    	list.Add (osVersion);
+        }
 
 		list.Add("Model: " + SystemInfo.deviceModel);
 
