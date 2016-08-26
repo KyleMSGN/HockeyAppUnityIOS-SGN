@@ -426,7 +426,8 @@ public class HockeyAppIOS : MonoBehaviour
 	{
 
 		#if (UNITY_IPHONE && !UNITY_EDITOR)
-		if (LogType.Assert == type || LogType.Exception == type || LogType.Error == type) {
+		if (LogType.Assert == type || LogType.Exception == type)  // || LogType.Error == type)  // disabled until 'stale touch' errors can be investigated
+        {
 			HandleException(logString, stackTrace);
 		}
 		#endif
